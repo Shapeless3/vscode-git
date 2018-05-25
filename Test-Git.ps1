@@ -1,0 +1,1 @@
+Get-ADUser cdosborne | Format-List
