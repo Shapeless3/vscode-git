@@ -1,5 +1,4 @@
-# Your Git repo!
-Your Git repo is ready
+# Powershell Repo
+Reminder - keep scripts sanitized
 
-## Work from anywhere!
-This was done on the Mac
+## 
