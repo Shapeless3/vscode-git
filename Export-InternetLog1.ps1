@@ -10,8 +10,6 @@ No parameters are needed
 .\name of script.ps1
 #>
 
-
-
 $Server = "hawk.eagle.ycusd.k12.ca.us"
 $Share = "LearnBrowsingHistory$"
 $Date = Get-Date -UFormat "%m-%d-%Y %I-%M-%S %p"
