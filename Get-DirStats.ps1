@@ -94,13 +94,13 @@ begin {
     $files = $directory | Get-ChildItem -Force -Recurse:$recurse | Where-Object { -not $_.PSIsContainer } 
     if ( $files ) { 
       Write-Progress -Activity "Get-DirStats.ps1" -Status "Calculating '$($directory.FullName)'" 
-      $output = $files | Measure-Object -Sum -Property Length | Select-Object ` 
+      $output = $files | Measure-Object -Sum -Property Length | Select-Object `
         @{Name="Path"; Expression={$directory.FullName}}, 
         @{Name="Files"; Expression={$_.Count; $script:totalcount += $_.Count}}, 
         @{Name="Size"; Expression={$_.Sum; $script:totalbytes += $_.Sum}} 
     } 
     else { 
-      $output = "" | Select-Object ` 
+      $output = "" | Select-Object `
         @{Name="Path"; Expression={$directory.FullName}}, 
         @{Name="Files"; Expression={0}}, 
         @{Name="Size"; Expression={0}} 
@@ -147,7 +147,7 @@ process {
 end { 
   # If -Total specified, output summary object. 
   if ( $Total ) { 
-    $output = "" | Select-Object ` 
+    $output = "" | Select-Object `
       @{Name="Path"; Expression={"<Total>"}}, 
       @{Name="Files"; Expression={$script:totalcount}}, 
       @{Name="Size"; Expression={$script:totalbytes}} 
